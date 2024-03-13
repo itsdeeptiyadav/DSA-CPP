@@ -6,8 +6,8 @@ void solve(vector<string> &ans, string digit, vector<string> mapping, int index,
 {
     if (index >= digit.length())
     {
-        ans.push_back(output);
-        return;
+          ans.push_back(output);
+          return;
     }
     int number = digit[index] - '0';
     string value = mapping[number];
