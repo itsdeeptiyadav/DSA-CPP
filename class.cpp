@@ -1,13 +1,28 @@
 #include<iostream>
 using namespace std;
 class hero{
-    public:
+    private:
     int health;
     char level;
+    public:
+    int getHealth(){
+        return health;
+
+    }
+    char getLevel(){
+        return level;
+    }
+    void setHealth(int h){
+        health =h;
+    }
+    void setLevel(char ch){
+        level=ch;
+
+    }
 };
 int main(){
     hero ramesh;
-    ramesh.health=70;
-    cout<<ramesh.health;
+    ramesh.setHealth(70);
+    cout<<ramesh.getHealth();
 
 }
