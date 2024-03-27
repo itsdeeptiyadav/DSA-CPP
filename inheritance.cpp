@@ -22,13 +22,7 @@ class male:public human{
     }
 };
 int main(){
-    male object1;
-    cout<<object1.age<<endl;
-    cout<<"hii"<<endl;
-    cout<<object1.colour<<endl;
-    object1.sleep();
-    object1.setWeight(45);
-    human female;
-    cout<<female.age;
+  male m1;
+  cout<<m1.height;
 
 }
