@@ -5,6 +5,11 @@ class hero{
     int health;
     char level;
     public:
+    hero(int health,char level){
+        this->health=health;
+        this->level=level;
+        cout<<"constructor"<<endl;
+    }
     int getHealth(){
         return health;
 
@@ -21,8 +26,9 @@ class hero{
     }
 };
 int main(){
-    hero ramesh;
-    ramesh.setHealth(70);
-    cout<<ramesh.getHealth();
+    hero ramesh(10,'g');
+    cout<<&ramesh<<endl;
+    cout<<ramesh.getHealth()<<endl;
+    cout<<ramesh.getLevel();
 
 }
