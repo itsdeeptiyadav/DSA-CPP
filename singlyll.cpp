@@ -16,6 +16,11 @@ void insertdata(node* &head,int d){
     head=temp;
 
 }
+void insertattail(node* &tail,int d){
+    node *temp=new node(d);
+    tail->next=temp;
+    tail=tail->next;
+}
 void print(node* &head){
     node*temp=head;
     while(temp!=NULL){
@@ -25,6 +30,9 @@ void print(node* &head){
 }
 int main(){
     node* node1=new node(10);
-    insertdata(node1,12);
-    print(node1);
+    node *head=node1;
+    node*tail=node1;
+    insertdata(head,12);
+    insertattail(tail,25);
+    print(head);
 }
