@@ -10,6 +10,7 @@ class node{
 
     }
 };
+
 void insertdata(node* &head,int d){
     node * temp=new node(d);
     temp->next=head;
@@ -28,11 +29,23 @@ void print(node* &head){
         temp=temp->next;
     }
 }
+void insertatmid(node *&head,int d,int position){
+    node* temp=head;
+    int cnt=1;
+    while(cnt<=position-1){
+        temp=temp->next;
+        cnt++;
+    }
+    node* nodetoinsert=new node(d);
+    nodetoinsert->next=temp->next;
+    temp->next=nodetoinsert;
+}
 int main(){
     node* node1=new node(10);
     node *head=node1;
     node*tail=node1;
     insertdata(head,12);
     insertattail(tail,25);
+    insertatmid(head,8,1);
     print(head);
 }
