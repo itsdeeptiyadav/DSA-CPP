@@ -35,6 +35,35 @@ void insertathead(node *&head,int d){
     head->prev=temp;
     head =temp;
 }
+void insertattail(node *&tail,int d){
+    node * temp=new node(d);
+    tail->next=temp;
+    temp->prev=tail;
+    tail=temp;
+
+}
+void insertatmiddle(node* &head,node* &tail,int d,int pos){
+    if(pos==1){
+        insertathead(head,d);
+        return;
+    }
+    node *latest=new node(d);
+    node * temp=head;
+    int cnt=1;
+    while(cnt<pos-1){
+        temp=temp->next;
+        cnt++;
+    }
+    latest->next=temp->next;
+    temp->next->prev=latest;
+    temp->next=latest;
+    latest->prev=temp;
+    if(temp->next==NULL){
+        insertattail(tail,d);
+        return;
+    }
+
+}
 int main(){
     node *hii=new node(20);
     print(hii);
@@ -42,6 +71,14 @@ int main(){
     cout<<getlength(hii);
     cout<<endl;
     node * head=hii;
+    node *tail=hii;
     insertathead(head,9);
+    insertattail(tail,5);
+    insertattail(tail,7);
+    print(head);
+    cout<<endl;
+    insertathead(head,4);
+    insertatmiddle(head,tail,12,3);
+    insertatmiddle(head,tail,15,5);
     print(head);
 }
