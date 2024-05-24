@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string>
 using namespace std;
 class a{
     public:
@@ -12,6 +13,8 @@ class a{
 
 };
 int main(){
+    string h="hiii";
     a obj;
+    obj.sayhello(h);
     obj.sayhello();
 }

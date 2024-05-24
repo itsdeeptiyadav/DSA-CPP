@@ -22,7 +22,7 @@ void change(vector<string> &h, string given)
 int main()
 {
     vector<string> h;
-    string given = "79";
+    string given = "78";
     change(h, given);
     for (int i = 0; i < h.size(); i++)
     {

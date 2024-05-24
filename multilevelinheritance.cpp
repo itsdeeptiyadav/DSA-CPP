@@ -13,6 +13,7 @@ class dogs:public animals{
     public:
     void breed(){
         cout<<"go to other func for breed"<<endl;
+        speaking();
     }
 };
 class germansepherd: public dogs{
@@ -20,5 +21,5 @@ class germansepherd: public dogs{
 };
 int main(){
     germansepherd g;
-    g.speaking();
+    g.breed();
 }
