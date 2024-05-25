@@ -24,6 +24,7 @@ void insertattail(node*&tail,int d,int number){
         node * newnode= new node(d);
         tail=newnode;
         newnode->next=newnode;
+        
     }
     else{
         node *curr=tail;
@@ -33,12 +34,14 @@ void insertattail(node*&tail,int d,int number){
         node* temp=new node(d);
         temp->next=curr->next;
         curr->next=temp;
+        
     }
 
 
     
 }
 void print(node* tail){
+    
     node*temp=tail;
     do{
         cout<<tail->data;
@@ -47,12 +50,28 @@ void print(node* tail){
     }
     while(tail!=temp);
 }
+void deletion(node *&tail,int value){
+    node* prev=tail;
+    node* curr=prev->next;
+    while(curr->data!=value){
+        prev=curr;
+        curr=curr->next;
+    }
+    prev->next=curr->next;
+    curr->next=NULL;
+    delete curr;
+
+}
 int main(){
     node* tail=NULL;
     
     insertattail(tail,10,3);
     insertattail(tail,8,10);
     insertattail(tail,9,10);
+    insertattail(tail,12,8);
+    insertattail(tail,6,12);
+    deletion(tail,12);
+    
     print(tail);
 
 }

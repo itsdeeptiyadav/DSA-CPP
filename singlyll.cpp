@@ -56,7 +56,6 @@ void insertatmid(node *&head,node* &tail,int d,int position){
     temp->next=nodetoinsert;
 }
 void deletion(node* &head,int position){
-    node * temp=head;
     int cnt=1;
     if(position==1){
         node * temp=head;
