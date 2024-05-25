@@ -41,6 +41,10 @@ void insertattail(node*&tail,int d,int number){
     
 }
 void print(node* tail){
+    if(tail==NULL){
+        cout<<"linked list is empty";
+        return;
+    }
     
     node*temp=tail;
     do{
@@ -52,13 +56,20 @@ void print(node* tail){
     
 }
 void deletion(node *&tail,int value){
+    if(tail==NULL){
+        cout<<"linked list is empty";
+        return;
+    }
     node* prev=tail;
     node* curr=prev->next;
     while(curr->data!=value){
         prev=curr;
         curr=curr->next;
     }
-    if(tail==curr){
+    if(curr==prev){
+        tail=NULL;
+    }
+    else if(tail==curr){
         tail=prev;
     }
     prev->next=curr->next;
@@ -75,7 +86,16 @@ int main(){
     insertattail(tail,12,8);
     insertattail(tail,6,12);
     deletion(tail,10);
-    
     print(tail);
+    deletion(tail,8);
+    print(tail);
+    deletion(tail,9);
+    print(tail);
+    deletion(tail,12);
+    print(tail);
+    deletion(tail,6);
+    deletion(tail,3);
+    
+   print(tail);
 
 }
