@@ -49,6 +49,7 @@ void print(node* tail){
         tail=tail->next;
     }
     while(tail!=temp);
+    
 }
 void deletion(node *&tail,int value){
     node* prev=tail;
@@ -56,6 +57,9 @@ void deletion(node *&tail,int value){
     while(curr->data!=value){
         prev=curr;
         curr=curr->next;
+    }
+    if(tail==curr){
+        tail=prev;
     }
     prev->next=curr->next;
     curr->next=NULL;
@@ -70,7 +74,7 @@ int main(){
     insertattail(tail,9,10);
     insertattail(tail,12,8);
     insertattail(tail,6,12);
-    deletion(tail,12);
+    deletion(tail,10);
     
     print(tail);
 
