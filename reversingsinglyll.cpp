@@ -78,6 +78,26 @@ node * newreverse(node* &head){
     head->next=NULL;
     return chotahead;
 }
+node* kreverse(node * &head,int k){
+    if(head==NULL){
+        return head;
+    }
+    node * prev= NULL;
+    node * curr= head;
+    node * next=NULL;
+    int count =0;
+    while(curr !=NULL||count<k){
+        next= curr->next;
+        curr->next= prev;
+        prev=curr;
+        curr=next;
+
+    }
+    if(next!=NULL){
+        head->next=kreverse(next,k);
+    }
+    return prev; 
+}
 
 int main(){
     node* node1=new node(9);
