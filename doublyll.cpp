@@ -20,6 +20,16 @@ void print(node *head){
         temp=temp->next;
     }
 }
+node* reversing(node*& head){
+    if(head==NULL||head->next==NULL){
+        return head;
+    }
+    node * chotahead=reversing(head->next);
+    head->next->prev=head->next->next;
+    head->next->next=head;
+    head->next=NULL;
+    return chotahead;
+}
 int getlength(node *head){
     node *temp=head;
     int length=0;
@@ -81,4 +91,12 @@ int main(){
     insertatmiddle(head,tail,12,3);
     insertatmiddle(head,tail,15,5);
     print(head);
+    cout<<endl;
+    node* x=reversing(head);
+    print(x);
+    cout<<endl;
+    cout<<x->data;
+    cout<<head->data;
+    cout<<x->prev;
+    cout<<x->next;
 }
