@@ -76,6 +76,20 @@ void deletion(node* &head,int position){
     delete curr;
     }
 }
+bool iscircular(node * head){
+    if(head==NULL){
+        return true;
+    }
+    
+    node * temp=head->next;
+    while(temp!=NULL&&temp!=head){
+        temp=temp->next;
+    }
+    if(temp==head){
+        return true;
+    }
+    return false;
+}
 int main(){
     node* node1=new node(9);
     node *head=node1;
@@ -85,4 +99,6 @@ int main(){
     insertatmid(head,tail,7,1);
     deletion(head,1);
     print(head);
+    cout<<boolalpha;
+    cout<<iscircular(head);
 }

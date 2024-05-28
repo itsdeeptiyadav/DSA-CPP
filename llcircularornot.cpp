@@ -79,7 +79,7 @@ void deletion(node *&tail,int value){
 }
 bool iscircular(node * head){
     if(head==NULL){
-        return NULL;
+        return true;
     }
     
     node * temp=head->next;
