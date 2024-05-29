@@ -110,6 +110,33 @@ node * floyddetect(node* head){
     return NULL;
 
 }
+node * startingpoint(node * head){
+    if(head==NULL){
+        return NULL;
+    }
+    node * intersection=floyddetect(head);
+    node * slow=head;
+    while(slow!=intersection){
+        slow=slow->next;
+        intersection=intersection->next;
+    }
+    cout<<slow->data;
+    return slow;
+    
+}
+void removeloop(node* head){
+    if(head==NULL){
+        return;
+    }
+    node * startofloop=startingpoint(head);
+    node * temp=startofloop;
+    while(temp->next=startofloop){
+        temp=temp->next;
+    }
+    temp->next=NULL;
+    
+
+}
 int main(){
     node* tail=NULL;
     
@@ -120,6 +147,7 @@ int main(){
     insertattail(tail,6,12);
     cout<<boolalpha;
     cout<<iscircular(tail);
+    
     
 
 }
