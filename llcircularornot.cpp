@@ -124,7 +124,7 @@ node * startingpoint(node * head){
     return slow;
     
 }
-void removeloop(node* head){
+void removenewloop(node* head){
     if(head==NULL){
         return;
     }
