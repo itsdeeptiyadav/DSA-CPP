@@ -76,6 +76,79 @@ void deletion(node* &head,int position){
     delete curr;
     }
 }
+node* addTwoNumbers(node* l1, node* l2) {
+        node* temp=NULL;
+        node *curr=l1;
+        node *prev=l2;
+        int carry=0;
+        while(curr!=NULL && prev!=NULL){
+            if(curr->data + prev->data +carry<10){
+                int datanew=curr->data+ prev->data + carry;
+                carry=0;
+                if(temp!=NULL){
+                    insertdata(temp,datanew);
+                    
+
+                }
+                else{
+                    temp=new node(datanew);
+                }
+                
+
+            }
+            else{
+                int datanew=(curr->data + prev->data + carry)%10;
+                carry=(curr->data+ prev->data + carry)/10;
+                if(temp!=NULL){
+                    insertdata(temp,datanew);
+
+                }
+                else{
+                    temp=new node(datanew);
+                }
+                
+
+                
+                
+            }
+            curr=curr->next;
+            prev=prev->next;
+            
+
+        }
+        while(curr!=NULL){
+            int datanew=curr->data+carry;
+            if(datanew<10){
+                insertdata(temp,datanew);
+                carry=0;
+            }
+            else{
+                insertdata(temp,datanew%10);
+                carry=datanew/10;
+                
+            }
+            curr=curr->next;
+        }
+        while(prev!=NULL){
+            int datanew=prev->data+carry;
+            if(datanew<10){
+                insertdata(temp,datanew);
+                carry=0;
+            }
+            else{
+                insertdata(temp,datanew%10);
+                carry=datanew/10;
+                
+            }
+            prev=prev->next;
+        }
+        if(carry){
+            insertdata(temp,carry);
+        }
+        return temp;
+
+        
+}
 bool iscircular(node * head){
     if(head==NULL){
         return true;
@@ -101,4 +174,6 @@ int main(){
     print(head);
     cout<<boolalpha;
     cout<<iscircular(head);
+    node *hey=NULL;
+    print(hey);
 }
