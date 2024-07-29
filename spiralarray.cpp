@@ -7,6 +7,6 @@ int spiral(int arr[3][3],int n,int m){
 
 
 int main(){
-    int arr[3][3]={{1,9,10},{4,5,6},{7,8,9}};
+    int arr[3][3]={{1,9,44},{4,5,6},{7,8,9}};
     spiral(arr,3,3);
 }
