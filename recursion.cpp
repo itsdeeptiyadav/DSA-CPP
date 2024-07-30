@@ -26,14 +26,14 @@ double myPow(double x, int n){
     }
     return result;
 }
-// int fact(int n){
-//     if(n==0){//base case
-//         return 1;
-//     }
+int fact(int n){
+    if(n==0){//base case
+        return 1;
+    }
     
-//     return n*fact(n-1);
+    return n*fact(n-1);
     
-// }
+}
 int main(){
     double n=2;
     
