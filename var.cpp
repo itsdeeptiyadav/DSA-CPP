@@ -2,6 +2,6 @@
 #include <string>
 using namespace std;
 int main(){
-   string s ="   abcd";
+   string s ="   cbbfabcd";
    cout<<s[1];
 }
