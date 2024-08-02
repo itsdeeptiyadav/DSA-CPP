@@ -90,41 +90,7 @@ node *sorting(node* &head){
     }
     return head;
 }
-node *sorting(node* &head){
-    node * temp=head;
-    int zerocount=0;
-    int onecount=0;
-    int twocount=0;
-    while(temp!=NULL){
-        if(temp->data==0){
-            zerocount++;
-        }
-        else if(temp->data==1){
-            onecount++;
-        }
-        else if(temp->data==2){
-            twocount++;
-        }
-        temp=temp->next;
-    }
-    temp=head;
-    while(temp!=NULL){
-        if(zerocount!=0){
-            temp->data=0;
-            zerocount--;
-        }
-        else if(onecount!=0){
-            temp->data=1;
-            onecount--;
-        }
-        else if(twocount!=0){
-            temp->data=2;
-            twocount--;
-        }
-        temp=temp->next;
-    }
-    return head;
-}
+
 node * newsort(node * head1,node *&head2){
     if(head1==NULL){
         return head2;
