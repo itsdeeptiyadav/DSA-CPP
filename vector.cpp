@@ -12,4 +12,5 @@ int main(){
     vector<int>last(v);//copy the vector in last
     v.clear();//for clearmg
     vector<int>a(5,1);//here 5 stand for no of ele and 1 stands for initialization
+    vector<int> s;
 }

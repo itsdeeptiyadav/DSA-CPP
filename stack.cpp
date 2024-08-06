@@ -11,7 +11,18 @@ class stack{
         arr=new int(size);
         top=-1;
     }
-    void push
+    void push(int element){
+
+    }
+    void pop(){
+
+    }
+    int peek(){
+
+    }
+    bool isempty(){
+        
+    }
 
 };
 
