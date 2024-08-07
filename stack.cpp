@@ -12,6 +12,13 @@ class stack{
         top=-1;
     }
     void push(int element){
+        if(size-top>1){
+            top++;
+            arr[top]=element;
+        }
+        else{
+            cout<<"stack overflow";
+        }
 
     }
     void pop(){
@@ -21,7 +28,7 @@ class stack{
 
     }
     bool isempty(){
-        
+
     }
 
 };
