@@ -12,7 +12,7 @@ int removeElement(vector <int> &nums, int val) {
         
 }
 int main(){
-    vector<int>s={3,2,2,3};
+    vector<int>s={3,4,6,3};
     int val=removeElement(s,3);
     cout<<val;
 
