@@ -22,7 +22,7 @@ class stack{
 
     }
     void pop(){
-
+ 
     }
     int peek(){
 
