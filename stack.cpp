@@ -22,12 +22,33 @@ class stack{
 
     }
     void pop(){
+        if(top>=0){
+            top--;
+
+        }
+        else{
+            cout<<"stack underflow"<<endl;
+
+        }
  
     }
     int peek(){
+        if(top>=0){
+            return arr[top];
+        }
+        else{
+            cout<<"stack is empty"<<endl;
+            return -1;
+        }
 
     }
     bool isempty(){
+        if(top==-1){
+            return true;
+        }
+        else{
+            return false;
+        }
 
     }
 
