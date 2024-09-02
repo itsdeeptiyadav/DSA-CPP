@@ -37,7 +37,7 @@ int largestRectangleArea(vector<int>heights){
     vector<int> next(n);
     next=nextsmaller(heights,n);
     vector<int>prev(n);
-    prev=prevsmaller(n);
+    prev=prevsmaller(heights,n);
     int area=INT32_MIN;
     for(int i=0;i<n;i++){
         int l=heights[i];
