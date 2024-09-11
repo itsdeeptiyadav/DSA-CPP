@@ -34,7 +34,7 @@ void newchange(string &s){
     
 }
 int main(){
-    string s="helloPoonamMeDeepti";
+    string s="helloMyName";
     cout<<s.length()<<endl;
     newchange(s);
     
