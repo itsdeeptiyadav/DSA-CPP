@@ -10,5 +10,9 @@ int main(){
             cout<<ans[i][j]<<endl;
         }
     }
+    vector<int>v=ans.back();
+    int y=v[1];
+    cout<<y;
+    
 
 }

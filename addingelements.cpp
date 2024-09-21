@@ -16,7 +16,7 @@ int add(vector<int>&nums){
 
     }
     ans=ans+nums[n-1];
-    return an
+    return ans;
 
     }
 }
