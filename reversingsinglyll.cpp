@@ -74,11 +74,12 @@ node * newreverse(node* &head){
 
     }
     node* chotahead=newreverse(head->next);
-    head->next->next=head;
+    node * front=head->next;
+    front->next=head;
     head->next=NULL;
     return chotahead;
 }
-node* kreverse(node * &head,int k){
+node* kReverse(node * &head,int k){
     if(head==NULL){
         return head;
     }
@@ -95,7 +96,7 @@ node* kreverse(node * &head,int k){
 
     }
     if(next!=NULL){
-        head->next=kreverse(next,k);
+        head->next=kReverse(next,k);
     }
     return prev; 
 }
@@ -108,14 +109,13 @@ int main(){
     insertattail(tail,25);
     insertatmid(head,tail,7,1);
     insertatmid(head,tail,8,3);
-    cout<<head->data<<endl;
-    print(head);
+    
     cout<<endl;
     // reverse(head);
-    // print(head);
+    print(head);
     cout<<endl;
-    node * z=newreverse(head);
+    node * z=kReverse(head,5);
     print(z);
-    cout<<head->data;
+    
     
 }
