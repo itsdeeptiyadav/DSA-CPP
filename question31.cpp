@@ -1,6 +1,8 @@
 #include<iostream>
 #include<stack>
 #include<vector>
+#include<climits>
+using namespace std;
 class Solution {
 private:
     vector<int> nextSmallerElement(vector<int>& heights,int n){
@@ -36,7 +38,7 @@ private:
 public:
     int largestRectangleArea(vector<int>& heights) {
         int n=heights.size();
-        int area=INT_MIN;
+        int area=INT64_MIN;
         vector<int>next(n);
         next=nextSmallerElement( heights,n);
         vector<int>prev(n);
